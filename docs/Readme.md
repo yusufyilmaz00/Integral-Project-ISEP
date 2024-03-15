@@ -6,8 +6,8 @@ The teams consists of students identified in the following table.
 
 | Student Number | Name              |
 |----------------|-------------------|
-| **1XXXXXX**    | Name of student 1 |
-| **1XXXXXX**    | Name of student 2 |
+| **1180590**    | João Teixeira     |
+| **1232296**    | Yusuf Yilmaz     |
 | **1XXXXXX**    | Name of student 3 |
 | **1XXXXXX**    | Name of student 4 |
 
