@@ -45,8 +45,6 @@ configurability, installability, scalability and more._
 
 _Specifies or constraints the system design process. Examples may include: programming languages, software process, mandatory standards/patterns, use of development tools, class library, etc._
 
-* The application must be developed in Java language using the IntelliJ IDE or NetBeans.
-* The application's graphical interface is to be developed in JavaFX 11.
 * The class structure must be designed to allow easy maintenance and the addition of new features, following the best OO practices.
 * Best practices must be adopted for intentifying requirements, for OO software analysis and for design.
 * Javadoc must be used to generate useful documentationfor Java code.
@@ -58,6 +56,8 @@ _Specifies or constraints the code or construction of a system such
 such as: mandatory standards/patterns, implementation languages,
 database integrity, resource limits, operating system._
 
+* The application must be developed in Java language using the IntelliJ IDE or NetBeans.
+* The application's graphical interface is to be developed in JavaFX 11.
 * The implementation must follow a TDD (Test-Driven Development) approach, including, unit tests for all methods except for ones that implement Input/Output operations.
 * The unit tests should be implemented using the JUnit 5 framework; the JaCoCo plugin should be used to generate the coverage report.
 * Recognized coding standards (e.g. Camel case) must be adopted.

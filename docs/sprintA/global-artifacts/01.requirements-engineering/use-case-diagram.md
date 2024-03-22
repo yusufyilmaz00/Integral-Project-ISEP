@@ -14,11 +14,11 @@ However, be aware, this is a pedagogical simplification. On further projects and
 
 | UC/US | Description                                             |                   
 |:------|:--------------------------------------------------------|
-| UC001 | [Register Skills](../../us001/Readme.md)                |
-| UC002 | [Register Job](../../us002/Readme.md)                   |
-| UC003 | [Register Collaborator](../../us003/Readme.md)          |
-| UC004 | [Assign Skills](../../us004/Readme.md)                  |
-| UC005 | [Generate team proposal](../../us005/Readme.md)         |
-| UC006 | [Register Vehicle](../../us006/Readme.md)               |
-| UC007 | [Register check-up](../../us007/Readme.md)              |
-| UC008 | [List vehicles needing check-up](../../us008/Readme.md) |
+| UC01  | [Register Skills](../../us001/Readme.md)                |
+| UC02  | [Register Job](../../us002/Readme.md)                   |
+| UC03  | [Register Collaborator](../../us003/Readme.md)          |
+| UC04  | [Assign Skills](../../us004/Readme.md)                  |
+| UC05  | [Generate team proposal](../../us005/Readme.md)         |
+| UC06  | [Register Vehicle](../../us006/Readme.md)               |
+| UC07  | [Register check-up](../../us007/Readme.md)              |
+| UC08  | [List vehicles needing check-up](../../us008/Readme.md) |
