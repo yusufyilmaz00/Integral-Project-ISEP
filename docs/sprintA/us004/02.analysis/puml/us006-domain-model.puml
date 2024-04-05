@@ -1,0 +1,52 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+
+
+skinparam classAttributeIconSize 0
+
+hide circle
+hide methods
+
+
+
+class Organization {
+    name
+    vatNumber
+    website
+    phoneNumber
+    email
+}
+
+class Collaborator {
+Name
+birthdate
+admission date
+address
+contact info
+ ID doc type
+ ID number
+}
+
+
+
+
+class HRM {
+    name
+    email
+    position
+    phone
+}
+
+
+
+
+Organization "1" - "1" HRM :  >
+
+HRM "1" - "n..*" Collaborator : >
+
+
+
+@enduml
