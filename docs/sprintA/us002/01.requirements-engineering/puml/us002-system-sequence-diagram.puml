@@ -3,31 +3,31 @@ skinparam monochrome true
 skinparam packageStyle rectangle
 skinparam shadowing false
 
-title System Sequence Diagram (SSD) - Alternative One
+title System Sequence Diagram (SSD)
 
 autonumber
 
-actor "Organization\nEmployee" as Employee
+actor "Human Resource\nManager" as Manager
 participant ":System" as System
 
-activate Employee
+activate Manager
 
-    Employee -> System : asks to create a new job
+    Manager -> System : asks to create a new job
     activate System
 
-        System --> Employee : requests data (job name)
+        System --> Manager : requests data (job name)
     deactivate System
 
-    Employee -> System : types requested data
+    Manager -> System : types requested data
     activate System
 
-    System --> Employee : shows all data and requests confirmation
+    System --> Manager : shows all data and requests confirmation
     deactivate System
 
-    Employee -> System : confirms data
+    Manager -> System : confirms data
     activate System
 
-        System --> Employee : displays operation success
+        System --> Manager : displays operation success
     deactivate System
 
 @enduml
