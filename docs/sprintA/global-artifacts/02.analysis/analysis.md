@@ -131,29 +131,37 @@ An association is a relationship between instances of objects that indicates a r
 - etc.
 
 
-| Concept (A) 		|  Association   	|  Concept (B) |
-| --------------	| -------------  	| ------:----- |
-| C1            	| verb1    		   	| C2           |
-| Organization  	| manages    		 	| Green Space  |
-|                 | has             | Collaborator |
-|                 | has             | Human Resources Manager |
-|                 | has             | Vehicle and Equipment Fleet Manager |
-| Collaborator    | has             | Skill        |
-|                 | has             | Job          |
-| Task            | assigned to     | Team         |
-|                 | carried out on  | Green Space  |
-|                 | uses            | Vehicle      |
-|                 | uses            | Machine      |
-|                 | uses            | Equipment    |
-| Team            | composed of     | Collaborator |
-| Agenda          | defines         | Task         |
+| Concept (A)       		|  Association   	|  Concept (B)                        |
+| --------------------	| -------------  	| ------:---------------------------- |
+| C1                  	| verb1    		   	| C2                                  |
+| Organization        	| manages    		 	| Green Space                         |
+|                       | has             | Collaborator                        |
+|                       | has             | Human Resources Manager             |
+|                       | has             | Vehicle and Equipment Fleet Manager |
+| Collaborator          | has             | Skill                               |
+|                       | has             | Job                                 |
+| Task                  | assigned to     | Team                                |
+|                       | carried out on  | Green Space                         |
+|                       | uses            | Vehicle                             |
+|                       | uses            | Machine                             |
+|                       | uses            | Equipment                           |
+| Team                  | composed of     | Collaborator                        |
+|                       | defined by      | Human Resources Manager             |
+| Agenda                | defines         | Task                                |
+| Vehicle Fleet Manager | manages         | Vehicle                             |
+|                       | manages         | Equipment                           |
+|                       | manages         | Machine                             |
+| Green Spaces User     | accesses        | Portal                              |
+|                       | uses            | Green Space                         |
+
+
 
 
 
 
 ## Domain Model
 
-**Do NOT forget to identify concept atributes too.**
+**Do NOT forget to identify concept attributes too.**
 
 **Insert below the Domain Model Diagram in a SVG format**
 
