@@ -21,11 +21,13 @@ activate Manager
     Manager -> System : types requested data
     activate System
 
-    System --> Manager : shows skills list and asks to select one or more
-    deactivate System
+    loop
+        System --> Manager : shows skills list and asks to select one
+        deactivate System
 
-    Manager -> System : selects a skill
-        activate System
+        Manager -> System : selects a skill
+                activate System
+    end
 
     System --> Manager : shows all data and requests confirmation
     deactivate System
