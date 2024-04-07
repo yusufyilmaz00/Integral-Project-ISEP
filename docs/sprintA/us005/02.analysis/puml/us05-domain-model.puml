@@ -24,14 +24,25 @@ class Organization {
     email
 }
 
-class Job {
-    jobName
+class Team {
+    currentSize
+    maxSize
+    skillList
+}
+
+class Skill{
+    name
+    }
+
+class Collaborator {
+    name
+    email
+    phone
 }
 
 class HumanResourceManager {
     name
     email
-    position
     phone
 }
 
@@ -44,9 +55,9 @@ class HumanResourceManager {
 'Platform "1" -- "*" Organization : has registered >
 'Platform "1" -- "*" Category : defines >
 Organization "1" - "0..*" HumanResourceManager : has >
-Organization "1" - "0..*" Job: owns >
+Organization "1" - "0..*" Team: owns >
 'Task "*" -- "1" HumanResourceManager: created by >
-HumanResourceManager "1" -- "*" Job : creates >
+HumanResourceManager "1" -- "0..1" Team : creates >
 'HumanResourceManager "0..1" -- "1" User: acts as >
 
 @enduml
