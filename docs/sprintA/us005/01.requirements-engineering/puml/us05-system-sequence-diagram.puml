@@ -1,0 +1,41 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD)
+
+autonumber
+
+actor "Human Resource\nManager" as Manager
+participant ":System" as System
+
+activate Manager
+
+    Manager -> System : asks to create a team proposal
+    activate System
+
+        System --> Manager : requests data (min team size,max team size)
+    deactivate System
+
+    Manager -> System : types requested data
+    activate System
+
+    loop
+        System --> Manager : shows skills list and asks to select one
+        deactivate System
+
+        Manager -> System : selects a skill
+                activate System
+    end
+
+    System --> Manager : shows all data and requests confirmation
+    deactivate System
+
+    Manager -> System : confirms data
+    activate System
+
+        System --> Manager : displays information and operation success
+    deactivate System
+
+@enduml
