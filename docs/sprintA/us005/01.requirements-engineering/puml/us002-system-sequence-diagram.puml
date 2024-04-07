@@ -12,10 +12,10 @@ participant ":System" as System
 
 activate Manager
 
-    Manager -> System : asks to create a new job
+    Manager -> System : asks to create a team proposal
     activate System
 
-        System --> Manager : requests data (job name)
+        System --> Manager : requests data (min team size,max team size)
     deactivate System
 
     Manager -> System : types requested data
@@ -27,7 +27,7 @@ activate Manager
     Manager -> System : confirms data
     activate System
 
-        System --> Manager : displays operation success
+        System --> Manager : displays information and operation success
     deactivate System
 
 @enduml
