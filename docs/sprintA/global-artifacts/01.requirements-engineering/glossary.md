@@ -10,6 +10,7 @@ _(Complete according to the provided example)_
 | **Clerk**                               | Person responsible for carrying out various business supporting activities on the system.                                                        |
 | **CLK**                                 | Initialism for _Clerk_.                                                                                                                          |
 | **Collaborator**                        | An employee of the organization that carries out design, construction and/or maintenance tasks for green areas, depending on their skills        |
+| **Employee**                            | Same as _Collaborator_                                                                                                                           |
 | **Equipment**                           | Can be greatly diverse, such as sprayers, lifting platforms, et cetera                                                                           |
 | **Garden**                              | Garden space with or without trees with little or no equipment                                                                                   |
 | **Green Spaces Manager**                | The person responsible for managing the green spaces in charge of the organization                                                               |
