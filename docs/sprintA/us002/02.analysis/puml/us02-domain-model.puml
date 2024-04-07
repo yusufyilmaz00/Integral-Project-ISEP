@@ -22,13 +22,12 @@ class Organization {
 }
 
 class Job {
-    jobName
+    name
 }
 
 class HumanResourceManager {
     name
     email
-    position
     phone
 }
 
