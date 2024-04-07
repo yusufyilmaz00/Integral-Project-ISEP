@@ -9,7 +9,7 @@ The teams consists of students identified in the following table.
 | **1180590**    | João Teixeira     |
 | **1232296**    | Yusuf Yilmaz      |
 | **1232216**    | Dragomir Marinov  |
-| **1XXXXXX**    | Name of student 4 |
+| **1232225**    | Géza Mihályi      |
 
 # 2. Task Distribution ###
 
