@@ -50,10 +50,10 @@ As a Human Resource Manager (HRM), I want to generate a team proposal automatica
 * Information that contain each of team members and its skills.
 * (In)Success of the operation
 
-### ????? 1.6. System Sequence Diagram (SSD)
+### 1.6. System Sequence Diagram (SSD)
 
-![System Sequence Diagram](svg/us002-system-sequence-diagram.svg)
+![System Sequence Diagram](svg/us005-system-sequence-diagram.svg)
 
-### ?????1.7 Other Relevant Remarks
+### 1.7 Other Relevant Remarks
 
 * There are no relevant remarks.
