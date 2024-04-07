@@ -23,7 +23,7 @@ As a Human Resource Manager (HRM), I want to generate a team proposal automatica
 >
 > **Answer:** The system should not generate team and provide information why it can't generate a team.
 
-### ???? 1.3. Acceptance Criteria
+### 1.3. Acceptance Criteria
 
 * **AC1:** All required fields must be filled in.
 * **AC2:** Collaborator can not  be in 2 different team at the same time.
