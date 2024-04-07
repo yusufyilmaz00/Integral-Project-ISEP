@@ -23,7 +23,8 @@ class Organization {
 class Team {
     currentSize
     maxSize
-    skillList
+    minSize
+    skills
 }
 
 class Skill{
@@ -34,6 +35,11 @@ class Collaborator {
     name
     email
     phone
+    birthDate
+    admissionDate
+    address
+    idDocType
+    idNumber
 }
 
 class HumanResourceManager {
@@ -44,8 +50,8 @@ class HumanResourceManager {
 
 Organization "1" - "0..* " HumanResourceManager : has >
 Organization "1" - "0..* " Team: owns >
-HumanResourceManager "1" -- "0..1 " Team : creates >
-HumanResourceManager "1" -- "0..1 " Skill : assigness >
-Team "1" -- "0..* " Collaborator : has >
+HumanResourceManager "1" -- "0..1 " Team : defined by >
+HumanResourceManager "1" -- "0..1 " Skill : assigns >
+Team "1" -- "0..* " Collaborator : composed of >
 Team "1" -- "0..* " Skill : has >
 @enduml
