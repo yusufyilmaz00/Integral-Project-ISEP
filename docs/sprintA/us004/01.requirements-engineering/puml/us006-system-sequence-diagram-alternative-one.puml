@@ -15,13 +15,13 @@ activate Employee
    Employee --> System : Asks to assign a skill to a collaborator
        activate System
 
-    System -> Employee : Shows skills category list and asks to select one
+    System -> Employee : Shows skills list and asks to select one
     deactivate System
 
         Employee --> System : Selects a skill (1 .. n)
     activate System
 
-    System -> Employee : Shows all collaborators with no skills
+    System -> Employee : Shows all collaborators
     deactivate System
 
 

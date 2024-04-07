@@ -31,7 +31,11 @@ contact info
 }
 
 
+class Skill{
+name
 
+
+}
 
 class HRM {
     name
@@ -43,9 +47,10 @@ class HRM {
 
 
 
-Organization "1" - "1" HRM :  >
+Organization "1" - "n..*" HRM :has  >
 
-HRM "1" - "n..*" Collaborator : >
+HRM "1" - "n..*" Collaborator :assigns >
+Collaborator "0" - "n..*" Skill :has >
 
 
 
