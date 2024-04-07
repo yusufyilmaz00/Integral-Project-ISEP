@@ -1,4 +1,4 @@
-# US004 -  Assign one or more skills to a collaborator
+# US04 -  Assign skills
 
 
 ## 1. Requirements Engineering
@@ -6,7 +6,8 @@
 ### 1.1. User Story Description
 
 As an HRM, I want to assign one or more skills to a collaborator.
-### 1.2. Customer Specifications and Clarifications 
+
+### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
 
@@ -15,9 +16,9 @@ As an HRM, I want to assign one or more skills to a collaborator.
 **From the client clarifications:**
 
 > **Question:** Is there any certification/proof needed to register a skill to a colaborator?
-> 
-> **Answer:** No certification is required 
- 
+>
+> **Answer:** No certification is required
+
  > **Question:** Can the collaborator have no skills assigned?
 >
 > **Answer:** Yes.
@@ -40,6 +41,7 @@ As an HRM, I want to assign one or more skills to a collaborator.
 ### 1.4. Found out Dependencies
 
 * There is a dependency on "US001 - Register skills" as skills need to be predefined and available for assignment.
+
 ### 1.5 Input and Output Data
 
 **Input Data:**
@@ -47,7 +49,7 @@ As an HRM, I want to assign one or more skills to a collaborator.
 * Typed data:
     * Collaborator's name or identifier
      * Skills to be assigned
-	
+
 
 
 **Output Data:**

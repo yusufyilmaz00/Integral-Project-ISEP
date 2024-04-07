@@ -1,4 +1,4 @@
-# US003 -  Register a collaborator with a job and fundamental characteristics. 
+# US03 -  Register collaborator.
 
 
 ## 1. Requirements Engineering
@@ -8,12 +8,13 @@
 As an HRM, I want to register a collaborator with a job and fundamental
 characteristics.
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
 
->The following data is requierd: name, birthdate, admission date, address, contact info (mobile and
+>The following data is required: name, birthdate, admission date, address, contact info (mobile and
 email), ID doc type and respective number should be provided by HRM
+
 **From the client clarifications:**
 
 
@@ -42,7 +43,7 @@ email), ID doc type and respective number should be provided by HRM
   * Collaborator's ID document type
   * Collaborator's ID document number
   * Job details (designation, job category, etc.)
-	
+
 
 
 **Output Data:**
