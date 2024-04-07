@@ -24,7 +24,6 @@ class Team {
     currentSize
     maxSize
     minSize
-    skills
 }
 
 class Skill{
