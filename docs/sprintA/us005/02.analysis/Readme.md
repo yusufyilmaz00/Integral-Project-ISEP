@@ -1,4 +1,4 @@
-# US006 - Create a Task 
+# US05 - Generate Team Proposal
 
 ## 2. Analysis
 
