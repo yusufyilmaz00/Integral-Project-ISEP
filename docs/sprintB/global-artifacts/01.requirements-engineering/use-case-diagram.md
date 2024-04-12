@@ -11,13 +11,19 @@ However, be aware, this is a pedagogical simplification. On further projects and
 
 # Use Cases / User Stories
 
-| UC/US | Description                                             |                   
-|:------|:--------------------------------------------------------|
-| UC01  | [Register Skills](../../us001/Readme.md)                |
-| UC02  | [Register Job](../../us002/Readme.md)                   |
-| UC03  | [Register Collaborator](../../us003/Readme.md)          |
-| UC04  | [Assign Skills](../../us004/Readme.md)                  |
-| UC05  | [Generate team proposal](../../us005/Readme.md)         |
-| UC06  | [Register Vehicle](../../us006/Readme.md)               |
-| UC07  | [Register check-up](../../us007/Readme.md)              |
-| UC08  | [List vehicles needing check-up](../../us008/Readme.md) |
+| UC/US | Description                                                  |                   
+|:------|:-------------------------------------------------------------|
+| UC01  | [Register Skills](../../us01/Readme.md)                      |
+| UC02  | [Register Job](../../us02/Readme.md)                         |
+| UC03  | [Register Collaborator](../../us03/Readme.md)                |
+| UC04  | [Assign Skills](../../us04/Readme.md)                        |
+| UC05  | [Generate team proposal](../../us05/Readme.md)               |
+| UC06  | [Register Vehicle](../../us06/Readme.md)                     |
+| UC07  | [Register check-up](../../us07/Readme.md)                    |
+| UC08  | [List vehicles needing check-up](../../us08/Readme.md)       |
+| UC09  | [Calculate costs of water consumption](../../us09/Readme.md) |
+| UC10  | [Check equipment used](../../us10/Readme.md)                 |
+| UC11  | [Collect data from user portal](../../us11/Readme.md)        |
+| UC12  | [Import file of water point routes](../../us12/Readme.md)    |
+| UC13  | [Apply algorithm](../../us013/Readme.md)                     |
+| UC14  | [Run tests for UC13](../../us14/Readme.md)                   |
