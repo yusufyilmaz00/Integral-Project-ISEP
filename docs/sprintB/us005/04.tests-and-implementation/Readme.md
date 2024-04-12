@@ -1,0 +1,11 @@
+# US05 - Generate Team Proposal
+
+## 4. Tests 
+
+## 5. Construction (Implementation)
+
+## 6. Integration and Demo 
+
+## 7. Observations
+
+n/a
