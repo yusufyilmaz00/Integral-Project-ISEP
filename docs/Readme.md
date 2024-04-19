@@ -10,6 +10,8 @@ The teams consists of students identified in the following table.
 | **1232296**    | Yusuf Yilmaz      |
 | **1232216**    | Dragomir Marinov  |
 | **1232225**    | Géza Mihályi      |
+| **1232250**    | Lisa Schust       |
+| **1232233**    | Jeremias Saur     |
 
 # 2. Task Distribution ###
 
