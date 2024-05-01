@@ -1,5 +1,8 @@
 package sprintB.us12;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class Routes {
@@ -41,7 +44,24 @@ public class Routes {
         return result;
     }
 
-    public void importFromCsv (String filepath) {
-        //-> import from csv 
+    //-> import from csv
+    public void importFromCsv (String filePath) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length == 3) {
+                    try {
+                        this.add(new Edge(new WaterPoint(parts[0].trim()),new WaterPoint(parts[1].trim()), Float.parseFloat(parts[2].trim())));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error: Invalid format for route data.");
+                    }
+                } else {
+                    System.out.println("Error: Invalid number of fields in CSV line.");
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading CSV file: " + e.getMessage());
+        }
     }
 }
