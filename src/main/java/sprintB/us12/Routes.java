@@ -6,19 +6,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class Routes {
-    private List<Edge> graph;
+    private List<Edge> routes;
 
     public Routes() {
-        graph = new ArrayList<Edge>();
+        routes = new ArrayList<Edge>();
     }
 
     public void add(Edge e) {
-        graph.add(e);
+        routes.add(e);
     }
 
     public List<WaterPoint> getVertices() {
         List<WaterPoint> result = new ArrayList<WaterPoint>();
-        for (Edge e : graph) {
+        for (Edge e : routes) {
             if (!result.contains(e.getX()))
                 result.add(e.getX());
             if (!result.contains(e.getY()))
@@ -31,13 +31,13 @@ public class Routes {
     @Override
     public String toString() {
         return "Graph{" +
-                "graph=\n" + graph +
+                "graph=\n" + routes +
                 '}';
     }
 
     public List<WaterPoint> getVerticesConnectedToWaterPoint(WaterPoint v){
         List<WaterPoint> result = new ArrayList<>();
-        for (Edge e : graph){
+        for (Edge e : routes){
             if (e.getX().equals(v))
                 result.add(e.getY());
         }
