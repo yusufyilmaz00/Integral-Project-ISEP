@@ -1,0 +1,42 @@
+@startuml
+
+class Organization {
+    - name: String
+    - vatNumber: String
+    - website: String
+    - phoneNumber: String
+    - email: String
+    - humanResourceManagers: List<HumanResourceManager>
+    - jobs: List<Job>
+    + getName(): String
+    + getVatNumber(): String
+    + getWebsite(): String
+    + getPhoneNumber(): String
+    + getEmail(): String
+    + addHumanResourceManager(hrManager: HumanResourceManager): void
+    + getHumanResourceManagers(): List<HumanResourceManager>
+    + addJob(job: Job): void
+    + getJobs(): List<Job>
+}
+
+class HumanResourceManager {
+    - name: String
+    - email: String
+    - phone: String
+    - jobs: List<Job>
+    + getName(): String
+    + getEmail(): String
+    + getPhone(): String
+    + createJob(jobName: String): void
+    + getJobs(): List<Job>
+}
+
+class Job {
+    - name: String
+    + getName(): String
+}
+
+Organization "1" --> "0..*" HumanResourceManager
+HumanResourceManager "1" --> "*" Job
+Organization "1" --> "0..*" Job
+@enduml
