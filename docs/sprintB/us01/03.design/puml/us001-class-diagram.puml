@@ -1,0 +1,39 @@
+@startuml
+
+class Organization {
+    - name: String
+    - vatNumber: String
+    - website: String
+    - phoneNumber: String
+    - email: String
+    - collaborators: List<Collaborator>
+    + getName(): String
+    + getVatNumber(): String
+    + getWebsite(): String
+    + getPhoneNumber(): String
+    + getEmail(): String
+    + addCollaborator(collaborator: Collaborator): void
+    + getCollaborators(): List<Collaborator>
+}
+
+class Collaborator {
+    - name: String
+    - email: String
+    - phone: String
+    - skills: List<Skill>
+    + getName(): String
+    + getEmail(): String
+    + getPhone(): String
+    + addSkill(skill: Skill): void
+    + getSkills(): List<Skill>
+}
+
+class Skill {
+    - name: String
+    + getName(): String
+}
+
+Organization "1" --> "0..*" Collaborator
+Collaborator "0..*" --> "0..*" Skill
+
+@enduml
