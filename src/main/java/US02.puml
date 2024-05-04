@@ -27,8 +27,12 @@ class HumanResourceManager {
     + getName(): String
     + getEmail(): String
     + getPhone(): String
-    + createJob(jobName: String): void
+    + createJob(String newJob): void
     + getJobs(): List<Job>
+    + registerJob(): void
+    + checkJob(String JobName): int
+    - JobCatcher(String JobName): boolean
+    - CheckifSame(String JobName): boolean
 }
 
 class Job {
