@@ -3,14 +3,11 @@ package sprintB.us02;
 public class Main {
     public static void main(String[] args) {
         HumanResourceManager HRM1 = new HumanResourceManager("HR Manager 1", "hr1@example.com", "+123456789");
-        HRM1.createJobs("Python Programmer");
-
-        HumanResourceManager HRM2 = new HumanResourceManager("HR Manager 2", "hr2@example.com", "+987654321");
-        HRM2.createJobs("Machine Learning Programmer");
+        HRM1.registerJob();
+        HRM1.registerJob();
 
         Organization Telekom = new Organization("Telekom", "123456789", "www.telekom.com", "19489494", "telekom@gmail.com");
         Telekom.addHumanResourceManager(HRM1);
-        Telekom.addHumanResourceManager(HRM2);
 
         System.out.println("Organization: " + Telekom.getName());
         System.out.println("Human Resource Managers:");

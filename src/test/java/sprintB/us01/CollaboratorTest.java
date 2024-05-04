@@ -6,8 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CollaboratorTest {
 
+    /**
+     * Here we test if the skill contains special character
+     */
     @Test
-    void checkSpecialCharacterJob() {
+    void checkSpecialCharacterSkill() {
         //AAA - Arrange, Act, Assert
         Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
         String specialData = "?Python";
@@ -19,8 +22,12 @@ class CollaboratorTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+
+    /**
+     * Here we test if the skill was already created
+     */
     @Test
-    void checkifInListCharacterJob() {
+    void checkifInListCharacterSkill() {
         //AAA - Arrange, Act, Assert
         Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
         String sameData = "Python";
@@ -32,8 +39,12 @@ class CollaboratorTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+
+    /**
+     * Here we test if the skill was created
+     */
     @Test
-    void checkigoodNameJob() {
+    void checkigoodNameSkill() {
         //AAA - Arrange, Act, Assert
         Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
         String job1 = "Python";
