@@ -14,7 +14,7 @@ class CollaboratorTest {
         int expectedResult = 1;
 
         //Act
-        int result = Worker.checkJob(specialData);
+        int result = Worker.checkSkill(specialData);
 
         //Assert
         assertEquals(expectedResult, result);
@@ -28,7 +28,7 @@ class CollaboratorTest {
         Worker.addSkill(Python);
         int expectedResult = -1;
         //Act
-        int result = Worker.checkJob(sameData);
+        int result = Worker.checkSkill(sameData);
         //Assert
         assertEquals(expectedResult, result);
     }
@@ -42,7 +42,7 @@ class CollaboratorTest {
         Worker.addSkill(Python);
         int expectedResult = 0;
         //Act
-        int result = Worker.checkJob(job2);
+        int result = Worker.checkSkill(job2);
         //Assert
         assertEquals(expectedResult, result);
     }

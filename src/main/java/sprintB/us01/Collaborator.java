@@ -70,13 +70,13 @@ public class Collaborator {
         return skills;
     }
 
-    public void registerJob() {
+    public void registerSkill() {
         boolean retry = true;
-        System.out.println("What work would you like to have?");
+        System.out.println("What Job would you like to have?");
         while (retry) {
             Scanner JobQuestion = new Scanner(System.in);
             String JobName = JobQuestion.nextLine();
-            int returnNumber = checkJob(JobName);
+            int returnNumber = checkSkill(JobName);
             if (returnNumber == 0) {
                 this.addSkill(new Skill(JobName));
                 retry = false;
@@ -84,35 +84,35 @@ public class Collaborator {
         }
     }
 
-    public int checkJob(String JobName){
-        boolean res = JobCatcher(JobName);
+    public int checkSkill(String SkillName){
+        boolean res = SkillCatcher(SkillName);
         if (res) {
-            System.out.println("Not a valid Job name, please type again.");
+            System.out.println("Not a valid Skill name, please type again.");
             return 1;
         } else {
-            boolean resCheck = CheckifSame(JobName);
+            boolean resCheck = CheckifSame(SkillName);
             if (resCheck) {
-                System.out.println("This job has already been created, please try again.");
+                System.out.println("This Skill has already been created, please try again.");
                 return -1;
             } else {
-                System.out.println("Job added: " + JobName);
+                System.out.println("Skill added: " + SkillName);
                 return 0;
             }
         }
 
     }
 
-    private boolean JobCatcher(String JobName){
+    private boolean SkillCatcher(String SkillName){
         Pattern p = Pattern.compile(
                 "[^a-z]", Pattern.CASE_INSENSITIVE);
-        Matcher m = p.matcher(JobName);
+        Matcher m = p.matcher(SkillName);
         return m.find();
     }
 
-    private boolean CheckifSame(String JobName){
+    private boolean CheckifSame(String SkillName){
         boolean exist = false;
         for (Skill skill : this.getSkills()) {
-            if (skill.getName().equals(JobName)) {
+            if (skill.getName().equals(SkillName)) {
                 exist = true;
                 break;
             }
