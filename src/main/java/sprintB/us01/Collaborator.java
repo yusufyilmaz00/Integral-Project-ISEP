@@ -70,21 +70,34 @@ public class Collaborator {
         return skills;
     }
 
-    public void registerJob(){
-        Scanner JobQuestion = new Scanner(System.in);
+    public void registerJob() {
+        boolean retry = true;
         System.out.println("What work would you like to have?");
-        String JobName = JobQuestion.nextLine();
+        while (retry) {
+            Scanner JobQuestion = new Scanner(System.in);
+            String JobName = JobQuestion.nextLine();
+            int returnNumber = checkJob(JobName);
+            if (returnNumber == 0) {
+                this.addSkill(new Skill(JobName));
+                retry = false;
+            }
+        }
+    }
+
+    public int checkJob(String JobName){
         boolean res = JobCatcher(JobName);
         if (res) {
-            System.out.println("Not a valid Job name");
-
-        }else {
+            System.out.println("Not a valid Job name, please type again.");
+            return 1;
+        } else {
             boolean resCheck = CheckifSame(JobName);
-            if (resCheck){
-                System.out.println("This job has already been created");
-            }else{
-                this.addSkill(new Skill(JobName));
-                System.out.println("Job name is: " + JobName);}
+            if (resCheck) {
+                System.out.println("This job has already been created, please try again.");
+                return -1;
+            } else {
+                System.out.println("Job added: " + JobName);
+                return 0;
+            }
         }
 
     }
