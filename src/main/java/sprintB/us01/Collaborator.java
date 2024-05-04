@@ -2,6 +2,9 @@ package sprintB.us01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Collaborator {
     private String name;
@@ -66,5 +69,43 @@ public class Collaborator {
     public List<Skill> getSkills(){
         return skills;
     }
+
+    public void registerJob(){
+        Scanner JobQuestion = new Scanner(System.in);
+        System.out.println("What work would you like to have?");
+        String JobName = JobQuestion.nextLine();
+        boolean res = JobCatcher(JobName);
+        if (res) {
+            System.out.println("Not a valid Job name");
+
+        }else {
+            boolean resCheck = CheckifSame(JobName);
+            if (resCheck){
+                System.out.println("This job has already been created");
+            }else{
+                this.addSkill(new Skill(JobName));
+                System.out.println("Job name is: " + JobName);}
+        }
+
+    }
+
+    private boolean JobCatcher(String JobName){
+        Pattern p = Pattern.compile(
+                "[^a-z]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(JobName);
+        return m.find();
+    }
+
+    private boolean CheckifSame(String JobName){
+        boolean exist = false;
+        for (Skill skill : this.getSkills()) {
+            if (skill.getName().equals(JobName)) {
+                exist = true;
+                break;
+            }
+        }
+        return exist;
+    }
+
 }
 
