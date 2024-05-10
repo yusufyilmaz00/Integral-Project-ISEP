@@ -1,6 +1,7 @@
 package sprintB.us02;
 
-import sprintB.us01.Collaborator;
+import sprintB.us01.HumanResourceManager;
+import sprintB.us01.Job;
 
 import java.util.ArrayList;
 import java.util.List;

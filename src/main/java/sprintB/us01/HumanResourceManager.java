@@ -1,6 +1,4 @@
-package sprintB.us02;
-
-import sprintB.us01.Skill;
+package sprintB.us01;
 
 import java.util.ArrayList;
 import java.util.List;

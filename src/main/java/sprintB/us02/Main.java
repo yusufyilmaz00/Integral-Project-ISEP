@@ -1,5 +1,8 @@
 package sprintB.us02;
 
+import sprintB.us01.HumanResourceManager;
+import sprintB.us01.Job;
+
 public class Main {
     public static void main(String[] args) {
         HumanResourceManager HRM1 = new HumanResourceManager("HR Manager 1", "hr1@example.com", "+123456789");

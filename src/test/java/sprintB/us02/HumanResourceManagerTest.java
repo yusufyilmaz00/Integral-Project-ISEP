@@ -1,8 +1,7 @@
 package sprintB.us02;
 
 import org.junit.jupiter.api.Test;
-import sprintB.us01.Collaborator;
-import sprintB.us01.Skill;
+import sprintB.us01.HumanResourceManager;
 
 import static org.junit.jupiter.api.Assertions.*;
 

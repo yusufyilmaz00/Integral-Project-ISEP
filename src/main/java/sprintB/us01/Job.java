@@ -1,4 +1,4 @@
-package sprintB.us02;
+package sprintB.us01;
 
 public class Job {
     private String name;

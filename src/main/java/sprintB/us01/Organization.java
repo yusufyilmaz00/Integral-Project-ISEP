@@ -11,6 +11,10 @@ public class Organization {
     private String email;
     private List<Collaborator> collaborators;
 
+    // us02 (copied from another class
+    private List<HumanResourceManager> HRM;
+    private List<Job> jobs;
+
     public Organization(String name, String vatNumber, String website, String phoneNumber, String email) {
         this.name = name;
         this.vatNumber = vatNumber;
@@ -18,6 +22,8 @@ public class Organization {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.collaborators = new ArrayList<>();
+        this.HRM = new ArrayList<>();
+        this.jobs = new ArrayList<>();
     }
 
     public String getName() {
@@ -67,4 +73,33 @@ public class Organization {
     public List<Collaborator> getCollaborators(){
         return collaborators;
     }
+
+    public void addHumanResourceManager(HumanResourceManager HRMNew) {
+        HRM.add(HRMNew);
+    }
+
+    /**
+     * We can list who are the HRMs of the Org.
+     * @return - Retunr a list of the HRMs.
+     */
+    public List<HumanResourceManager> getHumanResourceManager(){
+        return HRM;
+    }
+
+    /**
+     * We can add a job that is owned by this org.
+     * @param job - Name of the job
+     */
+    public void addJob(Job job){
+        jobs.add(job);
+    }
+
+    /**
+     * It gives back us the jobs that this company owns.
+     * @return - Returns a list of jobs
+     */
+    public List<Job> getJobs(){
+        return jobs;
+    }
+
 }
