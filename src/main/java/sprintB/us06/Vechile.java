@@ -107,6 +107,7 @@ public class Vechile {
         this.maintenanceFrequency = maintenanceFrequency;
     }
 
+
     @Override
     public String toString() {
         return "Vechile{" +
