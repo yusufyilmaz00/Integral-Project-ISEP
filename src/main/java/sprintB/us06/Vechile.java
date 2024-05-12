@@ -17,7 +17,7 @@ public class Vechile {
         this.brand = brand;
         this.model = model;
         this.type = type;
-        this.plateID = plate;
+        this.plateID = plateID;
         this.tareWeight = tareWeight;
         this.grossWeight = grossWeight;
         this.currentKM = currentKM;
