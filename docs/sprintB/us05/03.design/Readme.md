@@ -9,6 +9,7 @@
 ## 3.2. Sequence Diagram (SD)
 
 ### Full Diagram
+![System Sequence Diagram](svg/us05-system-sequence-diagram-full.svg)
 
 ### Split Diagrams
 
