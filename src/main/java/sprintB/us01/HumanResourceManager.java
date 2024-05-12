@@ -336,5 +336,17 @@ public class HumanResourceManager {
             return false;
 
     }
+
+    public void createTeam(){
+        System.out.println("Please write the requested data");
+        System.out.println("min team size:");
+        Scanner data = new Scanner(System.in);
+        Integer minSize= data.nextInt();
+        System.out.println("max team size:");
+        Integer maxSize= data.nextInt();
+
+        
+
+    }
 }
 

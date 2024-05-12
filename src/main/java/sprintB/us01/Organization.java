@@ -15,6 +15,8 @@ public class Organization {
     private List<HumanResourceManager> HRM;
     private List<Job> jobs;
 
+    private List<Team> teams;
+
     public Organization(String name, String vatNumber, String website, String phoneNumber, String email) {
         this.name = name;
         this.vatNumber = vatNumber;
@@ -24,6 +26,7 @@ public class Organization {
         this.collaborators = new ArrayList<>();
         this.HRM = new ArrayList<>();
         this.jobs = new ArrayList<>();
+        this.teams = new ArrayList<>();
     }
 
     public String getName() {
@@ -102,4 +105,11 @@ public class Organization {
         return jobs;
     }
 
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void addTeam(Team team) {
+        this.teams.add(team);
+    }
 }
