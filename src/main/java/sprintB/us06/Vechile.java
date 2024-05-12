@@ -4,6 +4,7 @@ public class Vechile {
     private String brand;
     private String model;
     private String type;
+    private String plate;
     private double tareWeight;
     private double grossWeight;
     private double currentKM;
@@ -11,10 +12,11 @@ public class Vechile {
     private String acquisitionDate;
     private double maintenanceFrequency; // in km
 
-    public Vechile(String brand, String model, String type, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
+    public Vechile(String brand, String model, String type,String plate, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
         this.brand = brand;
         this.model = model;
         this.type = type;
+        this.plate = plate;
         this.tareWeight = tareWeight;
         this.grossWeight = grossWeight;
         this.currentKM = currentKM;
