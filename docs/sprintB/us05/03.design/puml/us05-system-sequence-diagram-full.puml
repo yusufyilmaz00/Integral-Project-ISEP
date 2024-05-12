@@ -1,0 +1,61 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title UI Sequence Diagram (SSD)
+
+autonumber
+
+actor "Human Resource\nManager" as Manager
+participant ":GenerateTeamUI" as UI
+participant ":SkillController" as SkillController
+participant ":Organization" as Organization
+activate Manager
+
+    Manager -> UI : asks to create a team proposal
+    activate UI
+
+        UI --> Manager : requests data (min team size,max team size)
+    deactivate UI
+
+    Manager -> UI : types requested data
+    activate UI
+
+    loop
+        UI -> SkillController : getSkillList()
+            activate SkillController
+
+        SkillController -> Organization : getSkillList()
+            activate Organization
+            Organization -> SkillController :Skill List
+            deactivate
+        SkillController -> UI : Skill List
+        deactivate SkillController
+
+        UI --> Manager : shows skills list and asks to select one
+        deactivate UI
+
+        Manager -> UI : selects a skill
+                activate UI
+    end
+
+    UI --> Manager : shows all data and requests confirmation
+    deactivate UI
+
+    Manager -> UI : confirms data
+    activate UI
+        UI -> SkillController : generateTeamBySkill(skills)
+        activate SkillController
+
+        loop
+            SkillController -> Organization : getCollaboratorBySkill(skill)
+            activate Organization
+            Organization -> SkillController : Collaborator
+            deactivate
+    SkillController -> UI : Team
+        deactivate
+    UI --> Manager : displays information and operation success
+    deactivate UI
+
+@enduml
