@@ -6,8 +6,9 @@ public class Main {
     public static void main(String[] args) {
 
         Collaborator Geza = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191", new Date(), new Date(), "address", "1", "id","1");
-        Geza.registerSkill();
-        Geza.registerSkill();
+        HumanResourceManager Geza2 = new HumanResourceManager("Geza", "1232225@isep.ipp.pt", "0681191191");
+        Geza2.registerSkill();
+        Geza2.registerSkill();
 
         Organization Telekom = new Organization("Telekom", "189161", "telekom.com", "1918961", "telekom@gmail.com");
         Telekom.addCollaborators(Geza);
@@ -20,6 +21,13 @@ public class Main {
                 System.out.println("  - " + skill.getName());
             }
         }
+        System.out.println("HumanResourceManager");
+        System.out.println("- " + Geza2.getName() + " (" + Geza2.getEmail() + ")");
+        System.out.println("possible  Skills:");
+        for (Skill skill : Geza2.getpossibleSkills()) {
+            System.out.println("  - " + skill.getName());
+        }
+
 
 
         // us02 (copied from another main)

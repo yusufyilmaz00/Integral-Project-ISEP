@@ -140,7 +140,7 @@ public class Collaborator {
 
     /**
      * Here we register a new skill, where we check if it is good for the requirements
-     */
+
     public void registerSkill() {
         boolean retry = true;
         System.out.println("What Skill would you like to have?");
@@ -159,7 +159,7 @@ public class Collaborator {
      * Here we test if the skill is appropiate by checking if it is already in the list or it has special character
      * @param SkillName It is a Skill Name that was given
      * @return We return integers, 1 means it has special characters, -1 means it is already in the list, 0 means it is correct
-     */
+
     public int checkSkill(String SkillName){
         boolean res = SkillCatcher(SkillName);
         if (res) {
@@ -182,7 +182,7 @@ public class Collaborator {
      * Here is the Special Character checker, where we check if it contains special character
      * @param SkillName It is the name of the skill
      * @return it returns a boolean true, or false, based on regex
-     */
+
     private boolean SkillCatcher(String SkillName){
         Pattern p = Pattern.compile(
                 "[^a-z]", Pattern.CASE_INSENSITIVE);
@@ -194,7 +194,7 @@ public class Collaborator {
      * It checks if it is already in the list
      * @param SkillName name of the job
      * @return returns a boolean true or false based on if it is already in the list or not.
-     */
+
     private boolean CheckifSame(String SkillName){
         boolean exist = false;
         for (Skill skill : this.getSkills()) {
@@ -205,6 +205,7 @@ public class Collaborator {
         }
         return exist;
     }
+    */
 
 }
 

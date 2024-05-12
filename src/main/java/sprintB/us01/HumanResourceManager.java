@@ -12,6 +12,8 @@ public class HumanResourceManager {
     private String email;
 
     private String phone;
+
+    private List<Skill> possibleSkills;
     private List<Job> Jobs;
 
     private List<Collaborator> collaborators;
@@ -29,6 +31,7 @@ public class HumanResourceManager {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.possibleSkills = new ArrayList<>();
         this.Jobs = new ArrayList<>();
         this.collaborators = new ArrayList<>();
     }
@@ -58,6 +61,83 @@ public class HumanResourceManager {
      */
     public String getPhone() {
         return phone;
+    }
+
+    public void addpossibleSkill(Skill skill){
+        possibleSkills.add(skill);
+    }
+
+    /**
+     * If we want to know what skills our collaborator can do, we can return it
+     * @return returns the list of the skill that the collaborator can do
+     */
+    public List<Skill> getpossibleSkills(){
+        return possibleSkills;
+    }
+
+    public void registerSkill() {
+        boolean retry = true;
+        System.out.println("What Skill would you like to have?");
+        while (retry) {
+            Scanner JobQuestion = new Scanner(System.in);
+            String JobName = JobQuestion.nextLine();
+            int returnNumber = checkSkill(JobName);
+            if (returnNumber == 0) {
+                this.addpossibleSkill(new Skill(JobName));
+                retry = false;
+            }
+        }
+    }
+
+    /**
+     * Here we test if the skill is appropiate by checking if it is already in the list or it has special character
+     * @param SkillName It is a Skill Name that was given
+     * @return We return integers, 1 means it has special characters, -1 means it is already in the list, 0 means it is correct
+     */
+    public int checkSkill(String SkillName){
+        boolean res = SkillCatcher(SkillName);
+        if (res) {
+            System.out.println("Not a valid Skill name, please type again.");
+            return 1;
+        } else {
+            boolean resCheck = CheckifSameSkill(SkillName);
+            if (resCheck) {
+                System.out.println("This Skill has already been created, please try again.");
+                return -1;
+            } else {
+                System.out.println("Skill added: " + SkillName);
+                return 0;
+            }
+        }
+
+    }
+
+    /**
+     * Here is the Special Character checker, where we check if it contains special character
+     * @param SkillName It is the name of the skill
+     * @return it returns a boolean true, or false, based on regex
+     */
+    private boolean SkillCatcher(String SkillName){
+        Pattern p = Pattern.compile(
+                "[^a-z]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(SkillName);
+        return m.find();
+    }
+
+    /**
+     * It checks if it is already in the list
+     * @param SkillName name of the job
+     * @return returns a boolean true or false based on if it is already in the list or not.
+     */
+    private boolean CheckifSameSkill(String SkillName){
+        boolean exist = false;
+        for (Skill skill : this.getpossibleSkills()) {
+            if (skill.getName().equals(SkillName)) {
+                exist = true;
+                break;
+            }
+        }
+        return exist;
     }
 
     /**
@@ -104,7 +184,7 @@ public class HumanResourceManager {
             System.out.println("Not a valid job name, please type again.");
             return 1;
         } else {
-            boolean resCheck = CheckifSame(JobName);
+            boolean resCheck = CheckifSameJob(JobName);
             if (resCheck) {
                 System.out.println("This job has already been created, please try again.");
                 return -1;
@@ -133,7 +213,7 @@ public class HumanResourceManager {
      * @param JobName name of the job
      * @return returns a boolean true or false based on if it is already in the list or not.
      */
-    private boolean CheckifSame(String JobName){
+    private boolean CheckifSameJob(String JobName){
         boolean exist = false;
         for (Job job : this.getJobs()) {
             if (job.getName().equals(JobName)) {
@@ -168,8 +248,8 @@ public class HumanResourceManager {
         System.out.println("ID doc type");
         data = new Scanner(System.in);
         String IdDocType = data.nextLine();
-        String taxpayerNumber;
-        String IdNumber;
+        String taxpayerNumber = "";
+        String IdNumber = "";
 
         while (retry) {
             System.out.println("taxpayer number:");
@@ -219,6 +299,8 @@ public class HumanResourceManager {
         else
             return false;
     }
+
+
 
 }
 
