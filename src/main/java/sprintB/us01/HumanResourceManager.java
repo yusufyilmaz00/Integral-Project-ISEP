@@ -229,10 +229,10 @@ public class HumanResourceManager {
         System.out.println("Name:");
         Scanner data = new Scanner(System.in);
         String name = data.nextLine();
-        System.out.println("birth date:");
+        System.out.println("birth date (dd/mm/yyyy):");
         String[] list = data.nextLine().split("/");
         Date birthDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
-        System.out.println("admission date:");
+        System.out.println("admission date (dd/mm/yyyy):");
         list = data.nextLine().split("/");
         Date admissionDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
         System.out.println("address:");
@@ -310,7 +310,7 @@ public class HumanResourceManager {
             System.out.println(selectedCollaborator + ":" + collaborator);
             selectedCollaborator += 1;
         }
-        System.out.println("please select Skill by typing the Number of the Skill:");
+        System.out.println("please select team by typing the Number of the Skill:");
         selectedCollaborator = answer.nextInt();
 
         collaborators.get(selectedCollaborator).addSkill(possibleSkills.get(selectedSkill));
@@ -339,6 +339,7 @@ public class HumanResourceManager {
             int i = 0;
             for (Skill skill : possibleSkills) {
                 System.out.println(i + ":" + skill);
+                i++;
             }
             boolean retry = true;
             System.out.println("Please select one skill by typing in the number");
@@ -353,7 +354,9 @@ public class HumanResourceManager {
                 }
             }
             System.out.println("Please confirm selection:");
-            System.out.println("min Size: " + minSize + "maxSize: " + maxSize + "Skills: ");
+            System.out.println("min Size: " + minSize);
+            System.out.println("maxSize: " + maxSize);
+            System.out.println("Skills: ");
             for (Skill skill : selectedSkills) {
                 System.out.println(skill + ", ");
             }
@@ -365,6 +368,8 @@ public class HumanResourceManager {
                     team.addSkills(skill);
                     int currentSize= team.getCurrentSize() + 1;
                     team.setCurrentSize(currentSize);
+                    confirm=true;
+                    System.out.println("Succsessful");
                 }
             }
             else {
