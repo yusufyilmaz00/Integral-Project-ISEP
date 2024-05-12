@@ -22,6 +22,10 @@ activate Manager
     activate System
 
     loop
+    System -> System : get list
+    activate System
+    deactivate System
+
         System --> Manager : shows skills list and asks to select one
         deactivate System
 
