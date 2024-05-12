@@ -4,7 +4,7 @@ public class Vechile {
     private String brand;
     private String model;
     private String type;
-    private String plate;
+    private String plateID;
     private double tareWeight;
     private double grossWeight;
     private double currentKM;
@@ -12,11 +12,12 @@ public class Vechile {
     private String acquisitionDate;
     private double maintenanceFrequency; // in km
 
-    public Vechile(String brand, String model, String type,String plate, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
+    //Constructor
+    public Vechile(String brand, String model, String type,String plateID, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
         this.brand = brand;
         this.model = model;
         this.type = type;
-        this.plate = plate;
+        this.plateID = plate;
         this.tareWeight = tareWeight;
         this.grossWeight = grossWeight;
         this.currentKM = currentKM;
@@ -25,6 +26,7 @@ public class Vechile {
         this.maintenanceFrequency = maintenanceFrequency;
     }
 
+    //getter & setter methods
     public String getBrand() {
         return brand;
     }
@@ -47,6 +49,14 @@ public class Vechile {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getPlateID() {
+        return plateID;
+    }
+
+    public void setPlateID(String plateID) {
+        this.plateID = plateID;
     }
 
     public double getTareWeight() {
@@ -103,6 +113,7 @@ public class Vechile {
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", type='" + type + '\'' +
+                ", plateID='" + plateID + '\'' +
                 ", tareWeight=" + tareWeight +
                 ", grossWeight=" + grossWeight +
                 ", currentKM=" + currentKM +
