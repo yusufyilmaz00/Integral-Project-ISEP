@@ -229,10 +229,10 @@ public class HumanResourceManager {
         System.out.println("Name:");
         Scanner data = new Scanner(System.in);
         String name = data.nextLine();
-        System.out.println("birth date (dd/mm/yyyy):");
+        System.out.println("birth date:");
         String[] list = data.nextLine().split("/");
         Date birthDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
-        System.out.println("admission date (dd/mm/yyyy):");
+        System.out.println("admission date:");
         list = data.nextLine().split("/");
         Date admissionDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
         System.out.println("address:");
@@ -271,7 +271,7 @@ public class HumanResourceManager {
                 retry = false;
             }
             else {
-                System.out.println("invalid taxpayer number");
+                System.out.println("invalid id number");
             }
         }
 
@@ -299,7 +299,7 @@ public class HumanResourceManager {
         int selectedSkill = 0;
         System.out.println("possible Skills");
         for (Skill skill : possibleSkills) {
-            System.out.println(selectedSkill + ":" + skill);
+            System.out.println(selectedSkill + ":" + skill.getName());
             selectedSkill += 1;
         }
         System.out.println("please select Skill by typing the Number of the Skill:");
@@ -310,7 +310,7 @@ public class HumanResourceManager {
             System.out.println(selectedCollaborator + ":" + collaborator);
             selectedCollaborator += 1;
         }
-        System.out.println("please select team by typing the Number of the Skill:");
+        System.out.println("please select Collaborator by typing the Number of the Collaborator:");
         selectedCollaborator = answer.nextInt();
 
         collaborators.get(selectedCollaborator).addSkill(possibleSkills.get(selectedSkill));
@@ -338,7 +338,7 @@ public class HumanResourceManager {
             System.out.println("possible Skills:");
             int i = 0;
             for (Skill skill : possibleSkills) {
-                System.out.println(i + ":" + skill);
+                System.out.println(i + ":" + skill.getName());
                 i++;
             }
             boolean retry = true;
@@ -349,7 +349,8 @@ public class HumanResourceManager {
                 i = scan.nextInt();
                 selectedSkills.add(possibleSkills.get(i));
                 System.out.println("Do you want to add another skill? Please type 'yes' or 'no'");
-                if (!scan.nextLine().equals("yes")) {
+                String answer = scan.nextLine();
+                if (!answer.equals("yes")) {
                     retry = false;
                 }
             }
@@ -358,7 +359,7 @@ public class HumanResourceManager {
             System.out.println("maxSize: " + maxSize);
             System.out.println("Skills: ");
             for (Skill skill : selectedSkills) {
-                System.out.println(skill + ", ");
+                System.out.println(skill.getName() + ", ");
             }
             System.out.println("Please type 'confirm' or 'exit'");
             if (Objects.equals(scan.nextLine(), "confirm")) {
