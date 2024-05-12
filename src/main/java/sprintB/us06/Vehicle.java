@@ -1,6 +1,6 @@
 package sprintB.us06;
 
-public class Vechile {
+public class Vehicle {
     private String brand;
     private String model;
     private String type;
@@ -13,7 +13,7 @@ public class Vechile {
     private double maintenanceFrequency; // in km
 
     //Constructor
-    public Vechile(String brand, String model, String type,String plateID, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
+    public Vehicle(String brand, String model, String type, String plateID, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
         this.brand = brand;
         this.model = model;
         this.type = type;
