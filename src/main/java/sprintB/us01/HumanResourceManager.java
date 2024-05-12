@@ -1,6 +1,7 @@
 package sprintB.us01;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -12,6 +13,10 @@ public class HumanResourceManager {
 
     private String phone;
     private List<Job> Jobs;
+
+    private List<Collaborator> collaborators;
+
+
 
     /**
      * This creates or constructs the HRM, it requires a name, an email address and a phone number
@@ -25,6 +30,7 @@ public class HumanResourceManager {
         this.email = email;
         this.phone = phone;
         this.Jobs = new ArrayList<>();
+        this.collaborators = new ArrayList<>();
     }
 
     /**
@@ -136,6 +142,82 @@ public class HumanResourceManager {
             }
         }
         return exist;
+    }
+
+    public void registerCollaborator () {
+        boolean retry = true;
+        System.out.println("Please write the requested data");
+        System.out.println("Name:");
+        Scanner data = new Scanner(System.in);
+        String name = data.nextLine();
+        System.out.println("birth date:");
+        String[] list = data.nextLine().split("/");
+        Date birthDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
+        System.out.println("admission date:");
+        list = data.nextLine().split("/");
+        Date admissionDate = new Date(Integer.parseInt(list[0]),Integer.parseInt(list[1]),Integer.parseInt(list[2]));
+        System.out.println("address:");
+        data = new Scanner(System.in);
+        String address = data.nextLine();
+        System.out.println("phone:");
+        data = new Scanner(System.in);
+        String phone = data.nextLine();
+        System.out.println("email:");
+        data = new Scanner(System.in);
+        String email = data.nextLine();
+        System.out.println("ID doc type");
+        data = new Scanner(System.in);
+        String IdDocType = data.nextLine();
+        String taxpayerNumber;
+        String IdNumber;
+
+        while (retry) {
+            System.out.println("taxpayer number:");
+            data = new Scanner(System.in);
+            taxpayerNumber = data.nextLine();
+            if (verifyTaxpayerNumber(taxpayerNumber)) {
+                retry = false;
+            }
+            else {
+                System.out.println("invalid taxpayer number");
+            }
+        }
+        retry = true;
+        while (retry) {
+            System.out.println("Id number:");
+            data = new Scanner(System.in);
+            IdNumber = data.nextLine();
+            if (verifyIdNumber(IdNumber, IdDocType)) {
+                retry = false;
+            }
+            else {
+                System.out.println("invalid taxpayer number");
+            }
+        }
+
+        collaborators.add(new Collaborator(name, email, phone, birthDate, admissionDate, address, taxpayerNumber, IdDocType, IdNumber));
+    }
+
+    private boolean verifyIdNumber(String number, String IdType) {
+        if (IdType == "passport") {
+           if (number.length() == 7) // not sure if thats the right length for portuguese passports, but I think so
+               return true;
+           else
+               return false;
+        } else if (IdType == "ID card") {
+            if (number.length() == 8) // not sure if thats the right length for portuguese id cards, but I think so
+                return true;
+            else
+                return false;
+        }
+        return false;
+    }
+
+    private boolean verifyTaxpayerNumber(String number) {
+        if (number.length() == 9) // not sure if thats the right length for the portuguese tax number, but I think so
+            return true;
+        else
+            return false;
     }
 
 }

@@ -2,6 +2,8 @@ package sprintB.us01;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CollaboratorTest {
@@ -12,7 +14,7 @@ class CollaboratorTest {
     @Test
     void checkSpecialCharacterSkill() {
         //AAA - Arrange, Act, Assert
-        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
+        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191", new Date(), new Date(), "address", "1", "id","1");
         String specialData = "?Python";
         int expectedResult = 1;
 
@@ -29,7 +31,7 @@ class CollaboratorTest {
     @Test
     void checkifInListCharacterSkill() {
         //AAA - Arrange, Act, Assert
-        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
+        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191", new Date(), new Date(), "address", "1", "id", "1");
         String sameData = "Python";
         Skill Python = new Skill(sameData);
         Worker.addSkill(Python);
@@ -46,7 +48,7 @@ class CollaboratorTest {
     @Test
     void checkigoodNameSkill() {
         //AAA - Arrange, Act, Assert
-        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191");
+        Collaborator Worker = new Collaborator("Geza","1232225@isep.ipp.pt", "06481191191", new Date(), new Date(), "address", "1","id","1");
         String job1 = "Python";
         String job2 = "Java";
         Skill Python = new Skill(job1);

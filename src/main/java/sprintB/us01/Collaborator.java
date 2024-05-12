@@ -1,6 +1,7 @@
 package sprintB.us01;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -13,6 +14,18 @@ public class Collaborator {
     private String phone;
     private List<Skill> skills;
 
+    private Date birthDate;
+
+    private Date admissionDate;
+
+    private String address;
+
+    private String taxpayerNumber;
+
+    private String IdDocType;
+
+    private String IdNumber;
+
     /**
      * This creates or constructs the collaborator, it requires a name, an email address and a phone number
      * @param name The name of the collaborator
@@ -20,11 +33,18 @@ public class Collaborator {
      * @param phone The phone number of the collaborator
      */
 
-    public Collaborator(String name, String email, String phone) {
+    public Collaborator(String name, String email, String phone, Date birthDate, Date admissionDate, String address, String taxpayerNumber, String IdDocType, String IdNumber) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.skills = new ArrayList<>();
+        this.birthDate = birthDate;
+        this.admissionDate = admissionDate;
+        this.address = address;
+        this.taxpayerNumber = taxpayerNumber;
+        this.IdDocType = IdDocType;
+        this.IdNumber = IdNumber;
+
     }
 
     /**
@@ -68,6 +88,54 @@ public class Collaborator {
      */
     public List<Skill> getSkills(){
         return skills;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public Date getAdmissionDate() {
+        return admissionDate;
+    }
+
+    public void setAdmissionDate(Date admissionDate) {
+        this.admissionDate = admissionDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTaxpayerNumber() {
+        return taxpayerNumber;
+    }
+
+    public void setTaxpayerNumber(String taxpayerNumber) {
+        this.taxpayerNumber = taxpayerNumber;
+    }
+
+    public String getIdDocType() {
+        return IdDocType;
+    }
+
+    public void setIdDocType(String idDocType) {
+        this.IdDocType = idDocType;
+    }
+
+    public String getIdNumber() {
+        return IdNumber;
+    }
+
+    public void setIdNumber(String idNumber) {
+        IdNumber = idNumber;
     }
 
     /**
