@@ -138,7 +138,22 @@ public class Collaborator {
         IdNumber = idNumber;
     }
 
-    /**
+    @Override
+    public String toString() {
+        return "Collaborator{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", skills=" + skills +
+                ", birthDate=" + birthDate +
+                ", admissionDate=" + admissionDate +
+                ", address='" + address + '\'' +
+                ", taxpayerNumber='" + taxpayerNumber + '\'' +
+                ", IdDocType='" + IdDocType + '\'' +
+                ", IdNumber='" + IdNumber + '\'' +
+                '}';
+    }
+/**
      * Here we register a new skill, where we check if it is good for the requirements
 
     public void registerSkill() {

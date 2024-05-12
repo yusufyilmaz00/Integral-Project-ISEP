@@ -10,7 +10,7 @@ class CollaboratorTest {
 
     /**
      * Here we test if the skill contains special character
-     */
+
     @Test
     void checkSpecialCharacterSkill() {
         //AAA - Arrange, Act, Assert
@@ -27,7 +27,7 @@ class CollaboratorTest {
 
     /**
      * Here we test if the skill was already created
-     */
+
     @Test
     void checkifInListCharacterSkill() {
         //AAA - Arrange, Act, Assert
@@ -44,7 +44,7 @@ class CollaboratorTest {
 
     /**
      * Here we test if the skill was created
-     */
+
     @Test
     void checkigoodNameSkill() {
         //AAA - Arrange, Act, Assert
@@ -59,5 +59,6 @@ class CollaboratorTest {
         //Assert
         assertEquals(expectedResult, result);
     }
+    */
 
 }

@@ -245,9 +245,7 @@ public class HumanResourceManager {
         System.out.println("email:");
         data = new Scanner(System.in);
         String email = data.nextLine();
-        System.out.println("ID doc type");
-        data = new Scanner(System.in);
-        String IdDocType = data.nextLine();
+        String IdDocType = "";
         String taxpayerNumber = "";
         String IdNumber = "";
 
@@ -264,6 +262,9 @@ public class HumanResourceManager {
         }
         retry = true;
         while (retry) {
+            System.out.println("ID doc type");
+            data = new Scanner(System.in);
+            IdDocType = data.nextLine();
             System.out.println("Id number:");
             data = new Scanner(System.in);
             IdNumber = data.nextLine();
@@ -300,7 +301,40 @@ public class HumanResourceManager {
             return false;
     }
 
+    public void assignSkillToCollaborator() {
+        Scanner answer = new Scanner(System.in);
+        Integer selectedSkill = 0;
+        System.out.println("possible Skills");
+        for (Skill skill : possibleSkills) {
+            System.out.println(selectedSkill + ":" + skill);
+            selectedSkill += 1;
+        }
+        System.out.println("please select Skill by typing the Number of the Skill:");
+        selectedSkill = answer.nextInt();
+        Integer selectedCollaborator = 0;
+        System.out.println("possible Collaborators");
+        for (Collaborator collaborator: collaborators) {
+            System.out.println(selectedCollaborator + ":" + collaborator);
+            selectedCollaborator += 1;
+        }
+        System.out.println("please select Skill by typing the Number of the Skill:");
+        selectedCollaborator = answer.nextInt();
 
+        collaborators.get(selectedCollaborator).addSkill(possibleSkills.get(selectedSkill));
+        Boolean confirmation = confirmAssignmentofSkillToCollaborator(collaborators.get(selectedCollaborator), possibleSkills.get(selectedSkill));
+        System.out.println("Succsess " + confirmation);
+    }
 
+    public boolean confirmAssignmentofSkillToCollaborator(Collaborator collaborator, Skill skill) {
+        List<Skill> skills = new ArrayList<>();
+        skills = collaborator.getSkills();
+
+        if (skills.contains(skill)) {
+            return true;
+        }
+        else
+            return false;
+
+    }
 }
 
