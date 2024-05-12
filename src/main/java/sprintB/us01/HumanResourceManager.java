@@ -1,11 +1,10 @@
 package sprintB.us01;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static java.lang.System.exit;
 
 public class HumanResourceManager {
     private String name;
@@ -280,30 +279,24 @@ public class HumanResourceManager {
     }
 
     private boolean verifyIdNumber(String number, String IdType) {
-        if (IdType == "passport") {
-           if (number.length() == 7) // not sure if thats the right length for portuguese passports, but I think so
-               return true;
-           else
-               return false;
-        } else if (IdType == "ID card") {
-            if (number.length() == 8) // not sure if thats the right length for portuguese id cards, but I think so
-                return true;
-            else
-                return false;
+        if (IdType.equals("passport")) {
+            // not sure if thats the right length for portuguese passports, but I think so
+            return number.length() == 7;
+        } else if (IdType.equals("ID card")) {
+            // not sure if thats the right length for portuguese id cards, but I think so
+            return number.length() == 8;
         }
         return false;
     }
 
     private boolean verifyTaxpayerNumber(String number) {
-        if (number.length() == 9) // not sure if thats the right length for the portuguese tax number, but I think so
-            return true;
-        else
-            return false;
+        // not sure if thats the right length for the portuguese tax number, but I think so
+        return number.length() == 9;
     }
 
     public void assignSkillToCollaborator() {
         Scanner answer = new Scanner(System.in);
-        Integer selectedSkill = 0;
+        int selectedSkill = 0;
         System.out.println("possible Skills");
         for (Skill skill : possibleSkills) {
             System.out.println(selectedSkill + ":" + skill);
@@ -311,7 +304,7 @@ public class HumanResourceManager {
         }
         System.out.println("please select Skill by typing the Number of the Skill:");
         selectedSkill = answer.nextInt();
-        Integer selectedCollaborator = 0;
+        int selectedCollaborator = 0;
         System.out.println("possible Collaborators");
         for (Collaborator collaborator: collaborators) {
             System.out.println(selectedCollaborator + ":" + collaborator);
@@ -321,7 +314,7 @@ public class HumanResourceManager {
         selectedCollaborator = answer.nextInt();
 
         collaborators.get(selectedCollaborator).addSkill(possibleSkills.get(selectedSkill));
-        Boolean confirmation = confirmAssignmentofSkillToCollaborator(collaborators.get(selectedCollaborator), possibleSkills.get(selectedSkill));
+        boolean confirmation = confirmAssignmentofSkillToCollaborator(collaborators.get(selectedCollaborator), possibleSkills.get(selectedSkill));
         System.out.println("Succsess " + confirmation);
     }
 
@@ -329,23 +322,57 @@ public class HumanResourceManager {
         List<Skill> skills = new ArrayList<>();
         skills = collaborator.getSkills();
 
-        if (skills.contains(skill)) {
-            return true;
-        }
-        else
-            return false;
-
+        return skills.contains(skill);
     }
 
-    public void createTeam(){
-        System.out.println("Please write the requested data");
-        System.out.println("min team size:");
-        Scanner data = new Scanner(System.in);
-        Integer minSize= data.nextInt();
-        System.out.println("max team size:");
-        Integer maxSize= data.nextInt();
+    public Team createTeam(){
+        Team team = new Team(0,0);
+        boolean confirm = false;
+        while(!confirm) {
+            System.out.println("Please write the requested data");
+            System.out.println("min team size:");
+            Scanner data = new Scanner(System.in);
+            int minSize = data.nextInt();
+            System.out.println("max team size:");
+            int maxSize = data.nextInt();
+            System.out.println("possible Skills:");
+            int i = 0;
+            for (Skill skill : possibleSkills) {
+                System.out.println(i + ":" + skill);
+            }
+            boolean retry = true;
+            System.out.println("Please select one skill by typing in the number");
+            Scanner scan = new Scanner(System.in);
+            List<Skill> selectedSkills = new ArrayList<>();
+            while (retry) {
+                i = scan.nextInt();
+                selectedSkills.add(possibleSkills.get(i));
+                System.out.println("Do you want to add another skill? Please type 'yes' or 'no'");
+                if (!scan.nextLine().equals("yes")) {
+                    retry = false;
+                }
+            }
+            System.out.println("Please confirm selection:");
+            System.out.println("min Size: " + minSize + "maxSize: " + maxSize + "Skills: ");
+            for (Skill skill : selectedSkills) {
+                System.out.println(skill + ", ");
+            }
+            System.out.println("Please type 'confirm' or 'exit'");
+            if (Objects.equals(scan.nextLine(), "confirm")) {
+                team.setMinSize(minSize);
+                team.setMaxSize(maxSize);
+                for (Skill skill : selectedSkills){
+                    team.addSkills(skill);
+                    int currentSize= team.getCurrentSize() + 1;
+                    team.setCurrentSize(currentSize);
+                }
+            }
+            else {
+                System.out.println("Not confirmed");
+            }
+        }
 
-        
+        return team;
 
     }
 }

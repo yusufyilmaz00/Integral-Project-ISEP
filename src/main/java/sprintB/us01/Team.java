@@ -4,52 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    private Integer currentSize;
-    private Integer maxSize;
-    private Integer minSize;
-
-    private List<Collaborator> composedCollaborators;
+    private int currentSize;
+    private int maxSize;
+    private int minSize;
 
     private List<Skill> skills;
 
-    public Team(Integer minSize, Integer maxSize) {
+    public Team(int minSize, int maxSize) {
         this.currentSize = 0;
         this.maxSize = maxSize;
         this.minSize = minSize;
-        this.composedCollaborators = new ArrayList<>();
         this.skills = new ArrayList<>();
     }
 
-    public Integer getCurrentSize() {
+    public int getCurrentSize() {
         return currentSize;
     }
 
-    public void setCurrentSize(Integer currentSize) {
+    public void setCurrentSize(int currentSize) {
         this.currentSize = currentSize;
     }
 
-    public Integer getMaxSize() {
+    public int getMaxSize() {
         return maxSize;
     }
 
-    public void setMaxSize(Integer maxSize) {
+    public void setMaxSize(int maxSize) {
         this.maxSize = maxSize;
     }
 
-    public Integer getMinSize() {
+    public int getMinSize() {
         return minSize;
     }
 
-    public void setMinSize(Integer minSize) {
+    public void setMinSize(int minSize) {
         this.minSize = minSize;
-    }
-
-    public List<Collaborator> getComposedCollaborators() {
-        return composedCollaborators;
-    }
-
-    public void addComposedCollaborators(Collaborator collaborator) {
-        this.composedCollaborators.add(collaborator);
     }
 
     public List<Skill> getSkills() {
@@ -58,5 +47,15 @@ public class Team {
 
     public void addSkills(Skill skill) {
         this.skills.add(skill);
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                " minSize=" + minSize +
+                ", maxSize=" + maxSize +
+                ", currentSize=" + currentSize +
+                ", skills=" + skills +
+                '}';
     }
 }
