@@ -1,0 +1,46 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD)
+
+autonumber
+
+actor "Human Resource\nManager" as Manager
+participant ":CreateJobUI" as UI
+participant ":CreateJobController" as Controller
+participant ":Organization" as Organization
+activate Manager
+
+    Manager -> UI : asks to create a new job
+    activate UI
+
+        UI --> Manager : requests data (job name)
+    deactivate UI
+
+    Manager -> UI : types requested data
+    activate UI
+
+    UI -> Controller : validation data
+    activate Controller
+    Controller -> Organization : checkJob()
+    activate Organization
+    Organization -> Controller
+    deactivate
+    Controller -> UI
+    deactivate Controller
+
+    UI --> Manager : shows all data and requests confirmation
+    deactivate UI
+
+    Manager -> UI : confirms data
+    activate UI
+        UI -> Controller : RegisterJob(job name)
+        activate Controller
+        Controller -> UI : Job
+        deactivate
+        UI --> Manager : displays operation success
+    deactivate UI
+
+@enduml
