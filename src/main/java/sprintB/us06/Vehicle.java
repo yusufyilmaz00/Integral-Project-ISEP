@@ -1,5 +1,5 @@
 package sprintB.us06;
-
+import java.util.Date;
 public class Vehicle {
     private String brand;
     private String model;
@@ -8,12 +8,12 @@ public class Vehicle {
     private double tareWeight;
     private double grossWeight;
     private double currentKM;
-    private String registerDate;
-    private String acquisitionDate;
+    private Date registerDate;
+    private Date acquisitionDate;
     private double maintenanceFrequency; // in km
 
     //Constructor
-    public Vehicle(String brand, String model, String type, String plateID, double tareWeight, double grossWeight, double currentKM, String registerDate, String acquisitionDate, double maintenanceFrequency) {
+    public Vehicle(String brand, String model, String type, String plateID, double tareWeight, double grossWeight, double currentKM, Date registerDate, Date acquisitionDate, double maintenanceFrequency) {
         this.brand = brand;
         this.model = model;
         this.type = type;
@@ -83,19 +83,19 @@ public class Vehicle {
         this.currentKM = currentKM;
     }
 
-    public String getRegisterDate() {
+    public Date getRegisterDate() {
         return registerDate;
     }
 
-    public void setRegisterDate(String registerDate) {
+    public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
 
-    public String getAcquisitionDate() {
+    public Date getAcquisitionDate() {
         return acquisitionDate;
     }
 
-    public void setAcquisitionDate(String acquisitionDate) {
+    public void setAcquisitionDate(Date acquisitionDate) {
         this.acquisitionDate = acquisitionDate;
     }
 
@@ -110,7 +110,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Vechile{" +
+        return "Vehicle{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", type='" + type + '\'' +
